@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 public class waits_all 
 {
@@ -32,6 +33,10 @@ public class waits_all
 				.withTimeout(30,TimeUnit.SECONDS)
 				.pollingEvery(5, TimeUnit.SECONDS) 			
 				.ignoring(NoSuchElementException.class);
+		
+		SoftAssert soft=new SoftAssert();
+	    soft.assertEquals(false, false, "yo");
+	    soft.assertAll();
 		
 	}
 
